@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
   before_save { self.email = email.downcase }
   has_many :articles
   #validates :first_name, presence: true
@@ -13,5 +14,6 @@ validates :email, presence: true,
   format: { with: VALID_EMAIL_REGEX }
 
   has_secure_password
+ 
 
 end
