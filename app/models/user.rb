@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   before_save { self.email = email.downcase }
-  has_many :articles
+  has_many :articles, dependent: :destroy
   #validates :first_name, presence: true
   #validates :last_name, presence: true
   validates :username, presence: true, 
