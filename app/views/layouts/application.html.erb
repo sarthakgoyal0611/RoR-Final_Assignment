@@ -10,9 +10,13 @@
     <link rel="stylesheet" href = "https://cdn.simplecss.org/simple.min.css">
     <%= javascript_importmap_tags %>
   </head>
+  
+  <header>
+      <%= render 'layouts/navbar' %>
+  </header>
 
   <body>
-  <%= render 'layouts/navbar' %>
+
    <%= render 'layouts/messages' %>
     <%= yield %>
   </body>

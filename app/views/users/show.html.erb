@@ -2,6 +2,10 @@
 
 <i> Username- <%= @user.username%></i>
 <i> Email- <%= @user.email%></i>
+<i> First Name- <%= @user.first_name%></i>
+<i> Last Name- <%= @user.last_name%></i>
+<i> Age- <%= @user.age%></i>
+
 <img src=<%= @user.avatar %> />
 
 <% if logged_in? && @user == current_user %>
