@@ -16,6 +16,7 @@
           <%= link_to current_user.username, user_path(current_user), class: "nav-link" %>
         </li>
         <%= "(Admin)" if current_user.admin? %> Profile [<%= current_user.username %>]
+       
         <li class="nav-item">
           <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete %>
         </li>

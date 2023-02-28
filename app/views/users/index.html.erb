@@ -14,8 +14,13 @@
             <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
             <%= link_to "View profile", user, class: "btn btn-outline-success" %> | 
             <% if logged_in? and user == current_user %>
-              <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-info" %>
+              <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-info" %>  |
             <% end %>
+
+            <% if logged_in? && current_user.admin? %>
+            <%= link_to "Delete profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { turbo_method: :delete} %>
+            <% end %>
+
           </div>
           <div class="card-footer text-muted">
             <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>

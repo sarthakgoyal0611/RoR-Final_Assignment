@@ -1,5 +1,10 @@
 <h1 class="text-center mt-4"> <%= @user.username%>'s profile </h1>
 
+<% if logged_in? && current_user.admin? %> 
+<p> Show All Users- <%= link_to 'Users', users_path %> </p>
+<% end %>
+
+
 <i> Username- <%= @user.username%></i>
 <i> Email- <%= @user.email%></i>
 <i> First Name- <%= @user.first_name%></i>
@@ -10,7 +15,8 @@
 
 <% if logged_in? && @user == current_user %>
   <div class="text-center mt-4">
-    <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+    <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %> |
+    <%= link_to "Delete profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { turbo_method: :delete} %>
   </div>
 <% end %>
 </div>
