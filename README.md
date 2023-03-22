@@ -13,6 +13,7 @@
 * Use pagination to show articles.
 * Use appropriate layout for application
 * Only authenticated user should be able to access private pages
+* Docker file of this project is also there.
 
 ![Screenshot (51)](https://user-images.githubusercontent.com/61346208/220845087-37a436d7-00fd-46b4-a8a9-dc85ea2d35fe.png)
 ![Screenshot (52)](https://user-images.githubusercontent.com/61346208/220845089-d94326be-9ab5-4e4a-b07b-d39110fcc921.png)
